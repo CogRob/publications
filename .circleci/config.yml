@@ -25,7 +25,6 @@ jobs:
               --space 13 \
               --align \
               --sort \
-              --merge \
               --strip-enclosing-braces \
               --sort-fields \
                   address \
