@@ -18,7 +18,7 @@ jobs:
           name: Run Linter
           working_directory: publications
           command: |
-            ./circleci/bibparser.py
+            ./bibparser.py
             bibtex-tidy publications.bib \
               --curly \
               --numeric \
