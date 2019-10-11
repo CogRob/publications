@@ -1,0 +1,64 @@
+version: 2.1
+
+executors:
+  linter_exec:
+    docker:
+      - image: cogrob/publications:ci
+    working_directory: /tmp/cogrob
+    environment:
+      FOO: "Foo"
+
+jobs:
+  linter:
+    executor: linter_exec
+    steps:
+      - checkout:
+          path: publications
+      - run:
+          name: Run Linter
+          working_directory: publications
+          command: |
+            ./circleci/bibparser.py
+            bibtex-tidy publications.bib \
+              --curly \
+              --numeric \
+              --space 13 \
+              --align \
+              --sort \
+              --merge \
+              --strip-enclosing-braces \
+              --sort-fields \
+                  address \
+                  author \
+                  booktitle \
+                  category \
+                  copyright \
+                  day \
+                  doi \
+                  isbn \
+                  issn \
+                  journal \
+                  location \
+                  metadata \
+                  month \
+                  note \
+                  number \
+                  on \
+                  pages \
+                  publisher \
+                  series \
+                  shorttitle \
+                  title \
+                  url \
+                  urldate \
+                  volume \
+                  year \
+              --strip-comments
+            git diff
+            git diff-index --quiet HEAD -- || exit 1
+
+workflows:
+  version: 2
+  lint_and_test:
+    jobs:
+      - linter
