@@ -19,6 +19,7 @@ jobs:
           working_directory: publications
           command: |
             ./.scripts/bibparser.py
+            ./.scripts/bibtidy.bash publications.bib
             git diff
             test -z "$(git status --porcelain)" || exit 1
 
