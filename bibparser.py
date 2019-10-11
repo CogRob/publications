@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import bibtexparser
 from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.bibdatabase import BibDatabase
