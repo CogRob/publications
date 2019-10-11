@@ -28,9 +28,16 @@ jobs:
 
             .scripts/bibparser.py
             .scripts/bibtidy.bash publications.bib
-
             rm *.original
+      - run:
+          name: Print Diff
+          working_directory: publications
+          command: |
             git diff
+      - run:
+          name: Test Diff
+          working_directory: publications
+          command: |
             test -z "$(git status --porcelain)" || exit 1
 
 workflows:
