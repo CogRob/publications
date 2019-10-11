@@ -2,7 +2,7 @@
 bibtex-tidy "$@" \
     --curly \
     --numeric \
-    --space 13 \
+    --space 4 \
     --align \
     --sort \
     --strip-enclosing-braces \
