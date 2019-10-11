@@ -18,8 +18,18 @@ jobs:
           name: Run Linter
           working_directory: publications
           command: |
+            .scripts/bibtidy.bash articles.bib
+            .scripts/bibtidy.bash book-chapters.bib
+            .scripts/bibtidy.bash books.bib
+            .scripts/bibtidy.bash conf-papers.bib
+            .scripts/bibtidy.bash journal-issues.bib
+            .scripts/bibtidy.bash reports.bib
+            .scripts/bibtidy.bash theses.bib
+
             .scripts/bibparser.py
             .scripts/bibtidy.bash publications.bib
+
+            rm *.original
             git diff
             test -z "$(git status --porcelain)" || exit 1
 
