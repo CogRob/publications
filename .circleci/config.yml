@@ -33,7 +33,10 @@ jobs:
           name: Print Diff
           working_directory: publications
           command: |
-            git diff
+            git add -A
+            git diff --cached > /tmp/linter.patch
+      - store_artifacts:
+          path: /tmp/linter.patch
       - run:
           name: Test Diff
           working_directory: publications
