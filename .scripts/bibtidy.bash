@@ -37,4 +37,5 @@ bibtex-tidy "$@" \
     --strip-comments \
     --omit \
         date-added \
-        date-modified
+        date-modified \
+    ./sort_bib.py "$@"
