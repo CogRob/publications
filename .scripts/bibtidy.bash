@@ -2,9 +2,10 @@
 bibtex-tidy "$@" \
     --curly \
     --numeric \
-    --space 4 \
+    --space 2 \
     --align \
     --sort \
+        type \
     --sort-fields \
         address \
         author \
@@ -29,7 +30,6 @@ bibtex-tidy "$@" \
         series \
         shorttitle \
         title \
-        type \
         url \
         urldate \
         volume \

@@ -16,11 +16,11 @@ for filename in all_bibs:
 
     for entry in entries:
         if(filename == 'conf-papers.bib'):
-            entry['type'] = 'Conference'
+            entry['category'] = 'Conference'
         elif(filename == 'articles.bib' or filename == 'journal-issues.bib'):
-            entry['type'] = 'Journal'
+            entry['category'] = 'Journal'
         elif(filename == 'reports.bib'):
-            entry['type'] = 'Report'
+            entry['category'] = 'Report'
         else:
             print("Unknown filename!")
             break
