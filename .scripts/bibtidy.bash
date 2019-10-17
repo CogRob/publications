@@ -5,7 +5,6 @@ bibtex-tidy "$@" \
     --space 4 \
     --align \
     --sort \
-    --strip-enclosing-braces \
     --sort-fields \
         address \
         author \
@@ -14,6 +13,7 @@ bibtex-tidy "$@" \
         copyright \
         day \
         doi \
+        editor \
         isbn \
         issn \
         journal \
@@ -23,13 +23,18 @@ bibtex-tidy "$@" \
         note \
         number \
         on \
+        organization \
         pages \
         publisher \
         series \
         shorttitle \
         title \
+        type \
         url \
         urldate \
         volume \
         year \
-    --strip-comments
+    --strip-comments \
+    --omit \
+        date-added \
+        date-modified
