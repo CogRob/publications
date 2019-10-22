@@ -72,7 +72,7 @@ def main():
     
     sorted= [SEPARATOR+sorted[i] for i in range(len(sorted))]
     
-    sortfile=args.bibfile+"-sorted2"
+    sortfile=args.bibfile
     fnew=open(sortfile,'w')
     # fnew.write(string.join(sorted,'\n'))
     fnew.write(''.join(sorted))
