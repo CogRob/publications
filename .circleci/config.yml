@@ -25,6 +25,7 @@ jobs:
             .scripts/bibtidy.bash journal-issues.bib
             .scripts/bibtidy.bash reports.bib
             .scripts/bibtidy.bash theses.bib
+            rm *.original
 
             .scripts/bibparser.py
             .scripts/bibtidy.bash publications.bib
