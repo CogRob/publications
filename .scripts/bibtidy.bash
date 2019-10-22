@@ -7,17 +7,28 @@ bibtex-tidy "$@" \
     --sort \
         type \
     --sort-fields \
+        abstract \
         address \
+        annote \
         author \
+        bibsource \
+        biburl \
         booktitle \
         category \
+        chapter \
+        comment \
         copyright \
         day \
         doi \
         editor \
+        editors \
+        eprint \
+        institution \
         isbn \
         issn \
         journal \
+        key \
+        keywords \
         location \
         metadata \
         month \
@@ -26,16 +37,18 @@ bibtex-tidy "$@" \
         on \
         organization \
         pages \
+        pdf \
         publisher \
+        school \
         series \
         shorttitle \
+        timestamp \
         title \
+        type \
         url \
         urldate \
         volume \
         year \
-    --strip-comments \
-    --omit \
-        date-added \
-        date-modified \
-    ./sort_bib.py "$@"
+    --strip-comments
+
+./.scripts/sort_bib.py "$@"
