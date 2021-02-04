@@ -49,6 +49,10 @@ bibtex-tidy "$@" \
         urldate \
         volume \
         year \
-    --strip-comments
+    --strip-comments \
+    --omit \
+        date-added \
+        date-modified \
+        read
 
 ./.scripts/sort_bib.py "$@"
