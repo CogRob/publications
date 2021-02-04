@@ -52,6 +52,7 @@ bibtex-tidy "$@" \
     --strip-comments \
     --omit \
         date-added \
-        date-modified
+        date-modified \
+        read
 
 ./.scripts/sort_bib.py "$@"
